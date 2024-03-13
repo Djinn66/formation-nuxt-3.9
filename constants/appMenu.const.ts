@@ -14,4 +14,9 @@ export const appMenuConst = [
     url: '/products',
     icon: 'mdi-package-variant-closed-plus',
   },
+  {
+    name: 'Examples',
+    url: '/examples',
+    icon: 'mdi-code-tags',
+  },
 ]
