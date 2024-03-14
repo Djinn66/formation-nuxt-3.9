@@ -61,7 +61,7 @@
 
 <style scoped>
   .listItem {
-    margin: 0 10px 10px 10px;
+    margin: 10px;
   }
   .textfield {
     padding-top: 10px;

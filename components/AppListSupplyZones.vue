@@ -20,6 +20,15 @@
 
   const newSupplyZones = ref<SupplyZone[]>([])
 
+  const searchZones = ref<string>('')
+
+  const filteredZones = computed(() => {
+    if(searchZones.value !== '' )
+      return zones.filter(zone => zone.name.toLowerCase().includes(searchZones.value.toLowerCase()))
+    else
+      return zones
+  })
+
   function addNewSupplyZones() {
     let idCalcule: number
     if (newSupplyZones.value.length > 0) {
@@ -37,17 +46,21 @@
 </script>
 
 <template>
-  <VList rounded>
-    <VListSubheader title="Select supply zones" />
-    <AppItemSupplyZones v-model="zones" />
-    <VListItem style="display: flex; justify-content: center">
-      <VBtn
-        color="primary"
-        @click="addNewSupplyZones"
-        >Add</VBtn
-      >
+  <VList rounded variant="elevated" elevation="5" style="text-align: center">
+    <VListItem>
+      <template v-slot:prepend>
+        Select supply zones
+      </template>
+      <template v-slot:append>
+        <VTextField v-model="searchZones" label="Search zone"  density="compact" variant="outlined" style="min-width: 200px"/>
+      </template>
     </VListItem>
+    <AppItemSupplyZones v-model="filteredZones" />
     <AppItemNewSupplyZones v-model="newSupplyZones" />
+    <VBtn
+      color="primary"
+      @click="addNewSupplyZones"
+    >Add</VBtn>
   </VList>
 </template>
 

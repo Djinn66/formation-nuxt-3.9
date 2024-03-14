@@ -6,6 +6,7 @@
 
 <template>
   <VListItem
+    v-if="zones && zones.length > 0"
     v-for="zone in zones"
     :key="zone.id"
     :title="zone.name"
@@ -37,6 +38,7 @@
       ></VTextField>
     </template>
   </VListItem>
+  <VListItem v-else>No values</VListItem>
 </template>
 
 <style scoped>
