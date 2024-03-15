@@ -43,7 +43,7 @@
 
 <style scoped>
   .listItem {
-    margin: 0 10px 10px 10px;
+    margin: 10px;
   }
   .date-textfield {
     display: flex;

@@ -23,10 +23,11 @@
   const searchZones = ref<string>('')
 
   const filteredZones = computed(() => {
-    if(searchZones.value !== '' )
-      return zones.filter(zone => zone.name.toLowerCase().includes(searchZones.value.toLowerCase()))
-    else
-      return zones
+    if (searchZones.value !== '')
+      return zones.filter((zone) =>
+        zone.name.toLowerCase().includes(searchZones.value.toLowerCase()),
+      )
+    else return zones
   })
 
   function addNewSupplyZones() {
@@ -46,13 +47,22 @@
 </script>
 
 <template>
-  <VList rounded variant="elevated" elevation="5" style="text-align: center">
-    <VListItem>
-      <template v-slot:prepend>
-        Select supply zones
-      </template>
+  <VList
+    rounded
+    variant="elevated"
+    elevation="5"
+    style="text-align: center; min-width: 700px"
+  >
+    <VListItem variant="flat">
+      <template v-slot:prepend> Select supply zones </template>
       <template v-slot:append>
-        <VTextField v-model="searchZones" label="Search zone"  density="compact" variant="outlined" style="min-width: 200px"/>
+        <VTextField
+          v-model="searchZones"
+          label="Search zone"
+          density="compact"
+          variant="outlined"
+          style="min-width: 200px"
+        />
       </template>
     </VListItem>
     <AppItemSupplyZones v-model="filteredZones" />
@@ -60,7 +70,8 @@
     <VBtn
       color="primary"
       @click="addNewSupplyZones"
-    >Add</VBtn>
+      >Add</VBtn
+    >
   </VList>
 </template>
 
