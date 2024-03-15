@@ -44,6 +44,13 @@
       code: '31T05034001230000',
     })
   }
+
+  function accept() {
+    console.log('TODO')
+  }
+  function cancel() {
+    console.log('TODO')
+  }
 </script>
 
 <template>
@@ -72,6 +79,22 @@
       @click="addNewSupplyZones"
       >Add</VBtn
     >
+    <VListItemAction
+      end
+      style="justify-content: end; margin-right: 10px"
+    >
+      <VBtn
+        @click="cancel"
+        variant="flat"
+        >Cancel</VBtn
+      >
+      <VBtn
+        @click="accept"
+        color="primary"
+        style="margin-left: 10px"
+        >Accept</VBtn
+      >
+    </VListItemAction>
   </VList>
 </template>
 
