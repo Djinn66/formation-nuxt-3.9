@@ -18,8 +18,8 @@ export default defineNuxtConfig({
   vite: {
     server: {
       proxy: {
-        '/api': {
-          target: 'http://localhost:5000/',
+        [`/${process.env.APP_GLOBAL_PREFIX}`]: {
+          target: `http://${process.env.DB_HOST}:${process.env.DB_PORT}/`,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
         },
