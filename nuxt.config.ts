@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       FETCH_LIST_INTERVALE: process.env.FETCH_LIST_INTERVALE || '100000',
+      MODE_DIALOG: process.env.MODE_DIALOG || 'false',
     },
   },
   modules: ['@pinia/nuxt', 'vuetify-nuxt-module'],

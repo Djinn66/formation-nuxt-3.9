@@ -6,9 +6,15 @@
 
   const props = defineProps<Props>()
 
+  const emit = defineEmits(['cancel'])
+
   const valid = ref(false)
   const handleClickCancel = () => {
-    useRouter().back()
+    if (useRuntimeConfig().public['MODE_POPUP'] === 'false') {
+      useRouter().back()
+    } else {
+      emit('cancel')
+    }
   }
   const handleSubmit = () => {
     valid.value && props.submit?.()
