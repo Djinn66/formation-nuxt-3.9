@@ -75,7 +75,7 @@ L'utilisation de *TypeScript* consiste à naviguer entre le typage automatique e
 #### Props
 ```html  
 <script setup lang="ts">  
- import User from "~/types"  
+ import User from "~//types"  
  
  /** PROPS **/
  interface Props {  
@@ -90,7 +90,7 @@ L'utilisation de *TypeScript* consiste à naviguer entre le typage automatique e
 #### Refs
 ```html  
 <script setup lang="ts">  
- import User from "~/types"; 
+ import User from "~//types"; 
  
  /**  REFS **/
  const user = ref<User|null>(null);  

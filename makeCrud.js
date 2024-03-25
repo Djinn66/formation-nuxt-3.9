@@ -46,7 +46,7 @@ function makeCrud(entityName) {
     {
       fileName: 'dataTableTemplates.const.ts',
       content:
-        "import type {DataTableTemplate} from '~/types/dataTableTemplate'\n" +
+        "import type {DataTableTemplate} from '~//types/dataTableTemplate'\n" +
         '\n' +
         'export const dataTableTemplatesConst: Array<DataTableTemplate> = [\n' +
         '  /**\n' +
@@ -73,8 +73,8 @@ function makeCrud(entityName) {
       fileName: `${formName}.vue`,
       content:
         '<script setup lang="ts">\n' +
-        `import type {${capitalizedSingularEntityName}Interface} from '~/types/${lowerCaseSingularEntityName}'\n` +
-        "  import {FORM_VALIDATIONS_RULES} from '~/constants/formValidationsRules.const'\n" +
+        `import type {${capitalizedSingularEntityName}Interface} from '~//types/${lowerCaseSingularEntityName}'\n` +
+        "  import {FORM_VALIDATIONS_RULES} from '~//constants/formValidationsRules.const'\n" +
         '\n' +
         '  /** PROPS **/\n' +
         '  interface Props {\n' +
@@ -112,7 +112,7 @@ function makeCrud(entityName) {
     {
       fileName: 'tableHeaders.const.ts',
       content:
-        "import type {ReadonlyHeaders} from '~/types/headers'\n" +
+        "import type {ReadonlyHeaders} from '~//types/headers'\n" +
         '\n' +
         'export const tableHeadersConst = [\n' +
         "  {title: 'Photo', align: 'start', sortable: false, key: 'thumbnail'},\n" +
@@ -133,12 +133,12 @@ function makeCrud(entityName) {
     {
       fileName: 'index.ts',
       content:
-        `import ${formName} from '~/domains/${lowerCaseEntityName}/${formName}.vue'\n` +
+        `import ${formName} from '~//domains/${lowerCaseEntityName}/${formName}.vue'\n` +
         `const FormComponent = ${formName}\n` +
-        `export {defaultValueConst} from '~/domains/${lowerCaseEntityName}/defaultValue.const'\n` +
-        `export {tableHeadersConst} from '~/domains/${lowerCaseEntityName}/tableHeaders.const'\n` +
-        `export {titles} from '~/domains/${lowerCaseEntityName}/titles.const'\n` +
-        `export {dataTableTemplatesConst} from '~/domains/${lowerCaseEntityName}/dataTableTemplates.const'\n` +
+        `export {defaultValueConst} from '~//domains/${lowerCaseEntityName}/defaultValue.const'\n` +
+        `export {tableHeadersConst} from '~//domains/${lowerCaseEntityName}/tableHeaders.const'\n` +
+        `export {titles} from '~//domains/${lowerCaseEntityName}/titles.const'\n` +
+        `export {dataTableTemplatesConst} from '~//domains/${lowerCaseEntityName}/dataTableTemplates.const'\n` +
         'export {FormComponent}',
     },
 
@@ -148,7 +148,7 @@ function makeCrud(entityName) {
   const typeFile = {
     fileName: `${lowerCaseSingularEntityName}.ts`,
     content:
-      "import type {EntityInterface} from '~/types/entity'\n" +
+      "import type {EntityInterface} from '~//types/entity'\n" +
       '\n' +
       `export interface ${capitalizedSingularEntityName}Interface extends EntityInterface {\n` +
       '  exemple: string\n' +
