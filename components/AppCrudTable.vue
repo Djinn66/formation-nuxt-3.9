@@ -9,7 +9,6 @@
     data: Array<T>
     loading: boolean
     error?: FetchError | null
-    createItemFunction?: Function
   }
 
   const props = withDefaults(defineProps<Props>(), {
@@ -18,9 +17,19 @@
     error: null,
   })
 
+  type Emit = {
+    (event: 'create'): void
+  }
+
+  const emit = defineEmits<Emit>()
+
   const keys = computed(() => {
     return props.headers?.map((header) => header.key) || []
   })
+
+  const handleCreate = () => {
+    emit('create')
+  }
 </script>
 
 <template>
@@ -45,7 +54,7 @@
         <v-spacer />
         <v-btn
           color="primary"
-          @click="createItemFunction"
+          @click="handleCreate"
           :disabled="loading"
         >
           Ajouter
