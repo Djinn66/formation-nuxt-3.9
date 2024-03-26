@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import FormCredential from '~/src/domains/credential/FormCredential.vue'
-  import AppFormLayout from '~/src/components/AppFormLayout.vue'
-  import type {UserInterface} from '~/src/types/user'
-  import type {CredentialsInterface} from '~/src/types/credentials'
-  import {Methods} from '~/src/constants/httpMethods.const'
+  import FormCredential from '~/domains/credential/FormCredential.vue'
+  import AppFormLayout from '~/components/AppFormLayout.vue'
+  import type {UserInterface} from '~/types/user'
+  import type {CredentialsInterface} from '~/types/credentials'
+  import {Methods} from '~/constants/httpMethods.const'
 
   definePageMeta({
     layout: 'auth',

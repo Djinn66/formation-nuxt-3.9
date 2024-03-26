@@ -1,7 +1,7 @@
-import AppCrudTableImg from '~/src/components/AppCrudTableImg.vue'
+import AppCrudTableImg from '~/components/AppCrudTableImg.vue'
 import {AppCrudTableActions} from '#components'
-import {handleDeleteItem} from '~/src/utils/handleDeleteItem'
-import type {ProductInterface} from '~/src/types/product'
+import {handleDeleteItem} from '~/utils/handleDeleteItem'
+import type {ProductInterface} from '~/types/product'
 
 export const dataTableTemplatesConst = [
   {

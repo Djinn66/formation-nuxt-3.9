@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import AppDarkModeBtn from '~/src/components/AppDarkModeBtn.vue'
-  import AppNavigationDrawer from '~/src/components/AppNavigationDrawer.vue'
+  import AppDarkModeBtn from '~/components/AppDarkModeBtn.vue'
+  import AppNavigationDrawer from '~/components/AppNavigationDrawer.vue'
 
   const darkMode = ref<'light' | 'dark'>('dark')
   const {mobile} = useDisplay()

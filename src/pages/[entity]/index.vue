@@ -1,8 +1,8 @@
 <script setup lang="ts" generic="T extends EntityInterface">
-  import type {EntityInterface} from '~/src/types/entity'
-  import type {KeyFromEntities} from '~/src/types/keyFromEntities'
-  import {useFetchEntityStore} from '~/src/stores/fetchEntityStore'
-  import {domains} from '~/src/domains'
+  import type {EntityInterface} from '~/types/entity'
+  import type {KeyFromEntities} from '~/types/keyFromEntities'
+  import {useFetchEntityStore} from '~/stores/fetchEntityStore'
+  import {domains} from '~/domains'
 
   /** CONFIG **/
   const {entity} = useRoute().params as {entity: string}

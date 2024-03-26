@@ -1,4 +1,4 @@
-import type {EntityInterface} from '~/src/types/entity'
+import type {EntityInterface} from '~/types/entity'
 
 export const useFetchEntityStore = <EntityType extends EntityInterface>(
   entity: string,

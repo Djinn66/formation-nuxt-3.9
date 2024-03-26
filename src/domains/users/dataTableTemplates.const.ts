@@ -1,8 +1,8 @@
 import {VChip} from 'vuetify/components'
-import type {DataTableTemplate} from '~/src/types/dataTableTemplate'
+import type {DataTableTemplate} from '~/types/dataTableTemplate'
 import {AppCrudTableActions, AppCrudTableImg} from '#components'
-import {handleDeleteItem} from '~/src/utils/handleDeleteItem'
-import type {UserInterface} from '~/src/types/user'
+import {handleDeleteItem} from '~/utils/handleDeleteItem'
+import type {UserInterface} from '~/types/user'
 
 export const dataTableTemplatesConst: Array<DataTableTemplate> = [
   {

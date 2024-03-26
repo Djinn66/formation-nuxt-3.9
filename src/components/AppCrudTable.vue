@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T extends EntityInterface">
-  import type {EntityInterface} from '~/src/types/entity'
-  import type {ReadonlyHeaders} from '~/src/types/headers'
+  import type {EntityInterface} from '~/types/entity'
+  import type {ReadonlyHeaders} from '~/types/headers'
   import {FetchError} from 'ofetch'
 
   interface Props {

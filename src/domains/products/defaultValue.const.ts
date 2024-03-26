@@ -1,4 +1,4 @@
-import type {ProductInterface} from '~/src/types/product'
+import type {ProductInterface} from '~/types/product'
 
 export const defaultValueConst = {
   title: '',

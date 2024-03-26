@@ -1,4 +1,4 @@
-import type {UserInterface} from '~/src/types/user'
+import type {UserInterface} from '~/types/user'
 
 export const defaultValueConst = {
   firstName: '',

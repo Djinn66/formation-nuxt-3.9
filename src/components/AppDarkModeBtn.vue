@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type {ColorMode} from '~/src/types/colorMode'
+  import type {ColorMode} from '~/types/colorMode'
 
   const darkMode = defineModel<ColorMode>({required: true})
 

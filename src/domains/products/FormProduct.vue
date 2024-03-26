@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import type {ProductInterface} from '~/src/types/product'
-  import {FORM_VALIDATIONS_RULES} from '~/src/constants/formValidationsRules.const'
+  import type {ProductInterface} from '~/types/product'
+  import {FORM_VALIDATIONS_RULES} from '~/constants/formValidationsRules.const'
 
   /** PROPS **/
   interface Props {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import {appMenuConst} from '~/src/constants/appMenu.const'
+  import {appMenuConst} from '~/constants/appMenu.const'
 </script>
 <template>
   <VNavigationDrawer class="position-fixed">

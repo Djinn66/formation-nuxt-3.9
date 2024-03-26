@@ -1,4 +1,4 @@
-import type {ReadonlyHeaders} from '~/src/types/headers'
+import type {ReadonlyHeaders} from '~/types/headers'
 
 export const tableHeadersConst = [
   {title: 'Photo', align: 'start', sortable: false, key: 'thumbnail'},
