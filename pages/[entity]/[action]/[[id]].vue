@@ -7,18 +7,15 @@
   /** CONFIG **/
   const {id, action, entity} = useRoute().params
 
+  const route = domains[entity as KeyFromEntities].route
+
   const method = action === 'update' ? Methods.PUT : Methods.POST
-  const url =
-    action === 'update'
-      ? `/api/${entity}/${id}`
-      : entity === 'user'
-        ? '/api/register'
-        : `/api/${entity}`
+  const url = action === 'update' ? `/api/${route}/${id}` : `/api/${route}`
   const subtitle = action === 'update' ? 'Modification' : 'Création'
 
   /** STORES **/
   const {putMessage} = useSnackbar()
-  const {forceRefresh} = useFetchEntityStore<T>(entity as string)
+  const {forceRefresh} = useFetchEntityStore<T>(route)
 
   /** FETCH **/
   /**
@@ -26,7 +23,7 @@
    * Ou affecte la valeur par défaut pour une création
    */
   const {data, pending: pendingData} = useFetch<T | Omit<T, 'id'>>(
-    `/api/${entity}/${id}`,
+    `/api/${route}/${id}`,
     {
       immediate: action === 'update',
       watch: false,

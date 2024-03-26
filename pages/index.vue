@@ -30,7 +30,7 @@
       if (response.ok) {
         token.value = response._data.accessToken
         user.value = response._data.user
-        useRouter().push({path: '/users'})
+        useRouter().push({path: '/utilisateurs'})
       }
     },
   })

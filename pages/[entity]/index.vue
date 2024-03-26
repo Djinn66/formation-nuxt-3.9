@@ -8,7 +8,7 @@
   const {entity} = useRoute().params as {entity: string}
 
   /** STORES **/
-  const storeEntity = useFetchEntityStore<T>(entity)
+  const storeEntity = useFetchEntityStore<T>(domains[entity as KeyFromEntities].route)
   const {data, pending, error} = storeToRefs(storeEntity)
   const {refreshData} = storeEntity
 

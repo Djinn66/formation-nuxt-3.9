@@ -26,7 +26,7 @@ export const dataTableTemplatesConst: Array<DataTableTemplate> = [
     component: AppCrudTableActions,
     handlers: {
       edit: (item: UserInterface) =>
-        useRouter().push(`/users/update/${item.id}`),
+        useRouter().push(`/utilisateurs/update/${item.id}`),
     },
     props: {
       deleteItemFunction: (item: UserInterface) =>

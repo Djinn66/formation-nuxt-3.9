@@ -5,3 +5,4 @@ export {tableHeadersConst} from '~/domains/products/tableHeaders.const'
 export {titles} from '~/domains/products/titles.const'
 export {dataTableTemplatesConst} from '~/domains/products/dataTableTemplates.const'
 export {FormComponent}
+export const route = "products"

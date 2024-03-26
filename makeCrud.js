@@ -4,10 +4,11 @@ import {createInterface} from 'readline'
 import path from 'path'
 import {fileURLToPath} from 'url'
 import pluralize from 'pluralize'
+import * as http from 'http'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-function makeCrud(entityName) {
+function makeCrud(entityName, httpPath) {
   const lowerCaseEntityName = entityName.toLowerCase()
   const capitalizedEntityName =
     lowerCaseEntityName.charAt(0).toUpperCase() + lowerCaseEntityName.slice(1)
@@ -139,7 +140,8 @@ function makeCrud(entityName) {
         `export {tableHeadersConst} from '~/domains/${lowerCaseEntityName}/tableHeaders.const'\n` +
         `export {titles} from '~/domains/${lowerCaseEntityName}/titles.const'\n` +
         `export {dataTableTemplatesConst} from '~/domains/${lowerCaseEntityName}/dataTableTemplates.const'\n` +
-        'export {FormComponent}',
+        'export {FormComponent}\n' +
+        `export const route = "${lowerCaseEntityName}"`,
     },
 
     // Ajoutez d'autres fichiers d'entité si nécessaire
@@ -165,7 +167,7 @@ function makeCrud(entityName) {
   writeFileSync(typeFilePath, typeFile.content)
   console.log(`Created ${typeFilePath}`)
 
-  updateDomains(lowerCaseEntityName)
+  updateDomains(lowerCaseEntityName, httpPath)
 }
 
 // Fonction pour demander le nom de l'entité à l'utilisateur
@@ -183,8 +185,23 @@ function askForEntityName() {
   })
 }
 
+// Fonction pour demander le nom de la route HTTP à l'utilisateur
+function askForHttpPath(entityName) {
+  const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  })
+
+  return new Promise((resolve) => {
+    rl.question(`Enter the path of the entity: (default: ${entityName}) `, (httpPath) => {
+      rl.close()
+      resolve(httpPath.trim())
+    })
+  })
+}
+
 // Fonction pour mettre à jour l'objet domains dans le fichier index.js
-const updateDomains = (entityName) => {
+const updateDomains = (entityName, httpPath) => {
   const filePath = path.join(__dirname, 'domains', 'index.ts')
   let content = readFileSync(filePath, 'utf8')
 
@@ -196,7 +213,7 @@ const updateDomains = (entityName) => {
   const newDomains = content
     .slice(content.indexOf('{') + 2, content.lastIndexOf('}') - 1)
     .split('\n')
-  newDomains.push(`  ${entityName},`)
+  newDomains.push(httpPath !== entityName ? `  '${httpPath}': ${entityName},` : `  ${entityName},`)
 
   const newContent = `${newImports.join('\n')}\n\nexport const domains = {\n${newDomains.join('\n')}\n}\n`
   writeFileSync(filePath, newContent)
@@ -206,6 +223,7 @@ const updateDomains = (entityName) => {
 // Utilisation du script
 async function main() {
   let entityName = process.argv[2]
+  let httpPath = process.argv[3]
 
   if (!entityName) {
     entityName = await askForEntityName()
@@ -216,7 +234,15 @@ async function main() {
     process.exit(1)
   }
 
-  makeCrud(entityName)
+  if (!httpPath) {
+    httpPath = await askForHttpPath(entityName)
+  }
+
+  if (!httpPath || httpPath.length <= 0) {
+    httpPath = `${entityName}`
+  }
+
+  makeCrud(entityName, httpPath)
 }
 
 await main()

@@ -6,3 +6,4 @@ export {tableHeadersConst} from '~/domains/users/tableHeaders.const'
 export {titles} from '~/domains/users/titles.const'
 export {dataTableTemplatesConst} from '~/domains/users/dataTableTemplates.const'
 export {FormComponent}
+export const route= "users"
