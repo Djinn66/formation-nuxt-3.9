@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import AppDarkModeBtn from '~//components/AppDarkModeBtn.vue'
+  import AppDarkModeBtn from '~/src/components/AppDarkModeBtn.vue'
 
   const darkMode = ref<'light' | 'dark'>('dark')
 </script>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import type {CredentialsInterface} from '~//types/credentials'
-  import {FORM_VALIDATIONS_RULES} from '~//constants/formValidationsRules.const'
+  import type {CredentialsInterface} from '~/src/types/credentials'
+  import {FORM_VALIDATIONS_RULES} from '~/src/constants/formValidationsRules.const'
   const credentials = defineModel<CredentialsInterface>({required: true})
 </script>
 

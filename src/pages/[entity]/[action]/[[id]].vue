@@ -1,8 +1,8 @@
 <script setup lang="ts" generic="T extends EntityInterface">
-  import {Methods} from '~//constants/httpMethods.const'
-  import type {EntityInterface} from '~//types/entity'
-  import type {KeyFromEntities} from '~//types/keyFromEntities'
-  import {domains} from '~//domains'
+  import {Methods} from '~/src/constants/httpMethods.const'
+  import type {EntityInterface} from '~/src/types/entity'
+  import type {KeyFromEntities} from '~/src/types/keyFromEntities'
+  import {domains} from '~/src/domains'
 
   /** CONFIG **/
   const {id, action, entity} = useRoute().params

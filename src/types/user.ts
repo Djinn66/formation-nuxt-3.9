@@ -1,4 +1,4 @@
-import type {EntityInterface} from '~//types/entity'
+import type {EntityInterface} from '~/src/types/entity'
 
 export interface UserInterface extends EntityInterface {
   firstName: string

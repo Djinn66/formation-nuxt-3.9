@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import type {UserInterface} from '~//types/user'
-  import {FORM_VALIDATIONS_RULES} from '~//constants/formValidationsRules.const'
+  import type {UserInterface} from '~/src/types/user'
+  import {FORM_VALIDATIONS_RULES} from '~/src/constants/formValidationsRules.const'
   /** CONFIG **/
   const listSelect = [
     {id: 1, text: 'Homme', value: 'male'},
