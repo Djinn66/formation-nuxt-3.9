@@ -8,38 +8,38 @@ import pluralize from 'pluralize'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 function makeCrud(entityName) {
-  // const lowerCaseEntityName = entityName.toLowerCase()
-  // const capitalizedEntityName =
-  //   lowerCaseEntityName.charAt(0).toUpperCase() + lowerCaseEntityName.slice(1)
-  //
-  // const singularEntityName = pluralize.singular(entityName)
-  // const pluralEntityName = pluralize.plural(entityName)
-  //
-  // const lowerCaseSingularEntityName = singularEntityName.toLowerCase()
-  // const lowerCasePluralEntityName = pluralEntityName.toLowerCase()
-  //
-  // const capitalizedSingularEntityName =
-  //   lowerCaseSingularEntityName.charAt(0).toUpperCase() +
-  //   lowerCaseSingularEntityName.slice(1)
-  // const capitalizedPluralEntityName =
-  //   lowerCaseSingularEntityName.charAt(0).toUpperCase() +
-  //   lowerCaseSingularEntityName.slice(1)
-  //
-  // const formName = `Form${capitalizedSingularEntityName}`
-  //
-  // const entityDirectory = join(__dirname, 'domains', lowerCaseEntityName)
-  // const typeDirectory = join(__dirname, 'types')
-  //
-  // // Créer le dossier de l'entité s'il n'existe pas déjà
-  // if (!existsSync(entityDirectory)) {
-  //   console.log(`Creating ${entityDirectory}...`)
-  //   mkdirSync(entityDirectory)
-  // }
-  //
-  // if (!existsSync(typeDirectory)) {
-  //   console.log(`Creating ${typeDirectory}...`)
-  //   mkdirSync(typeDirectory)
-  // }
+  const lowerCaseEntityName = entityName.toLowerCase()
+  const capitalizedEntityName =
+    lowerCaseEntityName.charAt(0).toUpperCase() + lowerCaseEntityName.slice(1)
+
+  const singularEntityName = pluralize.singular(entityName)
+  const pluralEntityName = pluralize.plural(entityName)
+
+  const lowerCaseSingularEntityName = singularEntityName.toLowerCase()
+  const lowerCasePluralEntityName = pluralEntityName.toLowerCase()
+
+  const capitalizedSingularEntityName =
+    lowerCaseSingularEntityName.charAt(0).toUpperCase() +
+    lowerCaseSingularEntityName.slice(1)
+  const capitalizedPluralEntityName =
+    lowerCaseSingularEntityName.charAt(0).toUpperCase() +
+    lowerCaseSingularEntityName.slice(1)
+
+  const formName = `Form${capitalizedSingularEntityName}`
+
+  const entityDirectory = join(__dirname, 'domains', lowerCaseEntityName)
+  const typeDirectory = join(__dirname, 'types')
+
+  // Créer le dossier de l'entité s'il n'existe pas déjà
+  if (!existsSync(entityDirectory)) {
+    console.log(`Creating ${entityDirectory}...`)
+    mkdirSync(entityDirectory)
+  }
+
+  if (!existsSync(typeDirectory)) {
+    console.log(`Creating ${typeDirectory}...`)
+    mkdirSync(typeDirectory)
+  }
 
   // Générer les fichiers de l'entité (vous pouvez ajouter d'autres fichiers si nécessaire)
   const entityFiles = [
