@@ -72,7 +72,7 @@
 <template>
   <AppFormLayout
     width="60%"
-    :title="domains[entity as KeyFromEntities].titles.tableTitle"
+    :title="domains[entity as KeyFromEntities].titles.formTitle"
     :subtitle="subtitle"
     :submit="execute"
     :loading="loadingComputed"
