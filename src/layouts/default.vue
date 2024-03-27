@@ -2,7 +2,6 @@
   import AppDarkModeBtn from '~/components/AppDarkModeBtn.vue'
   import AppNavigationDrawer from '~/components/AppNavigationDrawer.vue'
 
-  const darkMode = ref<'light' | 'dark'>('dark')
   const {mobile} = useDisplay()
   const drawer = ref(!mobile.value)
 
@@ -15,7 +14,7 @@
 </script>
 
 <template>
-  <VApp :theme="darkMode">
+  <VApp>
     <VLayout class="rounded rounded-md">
       <AppNavigationDrawer v-model="drawer" />
       <VAppBar title="Application bar">
@@ -24,9 +23,6 @@
           v-if="mobile"
         >
           <AppNavigationDrawerBtn @click="handleClick" />
-        </template>
-        <template #append>
-          <AppDarkModeBtn v-model="darkMode" />
         </template>
       </VAppBar>
 

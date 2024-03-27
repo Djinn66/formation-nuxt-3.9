@@ -51,8 +51,8 @@
 
 <template>
   <AppFormLayout
-    title="Formation VueJS"
     :submit="execute"
+    variant="evalated"
   >
     <FormCredential v-model="credentials" />
     <template #error>
@@ -67,14 +67,14 @@
     <template #actions="{valid}">
       <VBtn
         :loading="pending"
-        color="warning"
+        color="#0F2C69"
         type="submit"
         size="large"
         variant="flat"
         :block="true"
         :disabled="!valid"
       >
-        Se connecter
+        LOGIN
       </VBtn>
     </template>
   </AppFormLayout>

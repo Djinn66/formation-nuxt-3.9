@@ -8,13 +8,15 @@
   <VTextField
     v-model="credentials.email"
     :rules="[FORM_VALIDATIONS_RULES.required, FORM_VALIDATIONS_RULES.email]"
-    label="Identifiant"
+    label="Email"
+    variant="outlined"
   />
   <VTextField
     v-model="credentials.password"
     label="Mot de passe"
     :rules="[FORM_VALIDATIONS_RULES.required]"
-    type="password"
+    type="Password"
+    variant="outlined"
   />
 </template>
 

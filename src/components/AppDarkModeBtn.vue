@@ -4,7 +4,7 @@
   const darkMode = defineModel<ColorMode>({required: true})
 
   const handleClick = () => {
-    darkMode.value = darkMode.value === 'light' ? 'dark' : 'light'
+    // darkMode.value = darkMode.value === 'light' ? 'dark' : 'light'
   }
   const icon = computed(() =>
     darkMode.value === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night',

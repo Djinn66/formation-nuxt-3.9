@@ -23,6 +23,7 @@
     <VForm
       v-model="valid"
       :disabled="loading"
+      variant="plain"
       @submit.prevent="handleSubmit"
       @keydown.enter.prevent="handleSubmit"
     >
@@ -30,7 +31,7 @@
         <slot />
       </VCardText>
       <slot name="error" />
-      <VCardActions class="pa-4">
+      <VCardActions class="pa-4" >
         <slot
           name="actions"
           :valid="valid"
@@ -39,14 +40,14 @@
             color="warning"
             @click="handleClickCancel"
             size="large"
-            variant="text"
+            variant="outlined"
             text="Annuler"
           />
           <VBtn
             color="warning"
             type="submit"
             size="large"
-            variant="flat"
+            variant="outlined"
             text="Valider"
             :loading="loading"
             :disabled="!valid"
