@@ -31,7 +31,7 @@
       </VAppBar>
 
       <VMain
-        class="d-flex align-center justify-center"
+        class=""
         style="min-height: 300px"
       >
         <slot />

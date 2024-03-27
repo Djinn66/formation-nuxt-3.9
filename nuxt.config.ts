@@ -14,6 +14,11 @@ export default defineNuxtConfig({
     },
   },
   modules: ['@pinia/nuxt', 'vuetify-nuxt-module'],
+  vuetify: {
+    vuetifyOptions: {
+      labComponents: true,
+    },
+  },
   vite: {
     server: {
       proxy: {

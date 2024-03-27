@@ -19,4 +19,9 @@ export const appMenuConst = [
     url: '/examples',
     icon: 'mdi-code-tags',
   },
+  {
+    name: 'Day Timeline',
+    url: '/daytimeline',
+    icon: 'mdi-clock',
+  },
 ]
