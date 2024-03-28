@@ -1,17 +1,22 @@
 export const appMenuConst = [
   {
-    name: 'Home',
-    url: '/',
-    icon: 'mdi-home',
+    name: 'Tankers',
+    url: '/tankers',
+    icon: 'mdi-airplane-takeoff',
+  },
+  {
+    name: 'Receivers',
+    url: '/receivers',
+    icon: 'mdi-airplane',
+  },
+  {
+    name: 'Zones',
+    url: '/zones',
+    icon: 'mdi-vector-circle',
   },
   {
     name: 'Users',
     url: '/users',
-    icon: 'mdi-account',
-  },
-  {
-    name: 'Products',
-    url: '/products',
-    icon: 'mdi-package-variant-closed-plus',
+    icon: 'mdi-account-multiple',
   },
 ]

@@ -15,6 +15,25 @@ export default defineNuxtConfig({
     },
   },
   modules: ['@pinia/nuxt', 'vuetify-nuxt-module'],
+  vuetify: {
+    moduleOptions: {
+      /* module specific options */
+    },
+    vuetifyOptions: {
+      theme: {
+        themes: {
+          light: {
+            colors: {
+              primary: '#0F2C69',
+              bg_menu: '#0B3384',
+              border: '#21438E',
+              selectedText: '#79CEFF'
+            },
+          },
+        },
+      }
+    }
+  },
   vite: {
     server: {
       proxy: {
