@@ -67,7 +67,7 @@
     <template #actions="{valid}">
       <VBtn
         :loading="pending"
-        color="#0F2C69"
+        color="primary"
         type="submit"
         size="large"
         variant="flat"
