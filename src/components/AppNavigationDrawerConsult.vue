@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import {appMenuConst} from '~/constants/appMenu.const'
+  import {appMenuConsultConst} from '~/constants/appMenu.const'
 </script>
 
 <template>
@@ -17,7 +17,7 @@
       </VListItem>
       <VDivider style="margin-bottom: 20px"/>
       <VListItem
-        v-for="link in appMenuConst"
+        v-for="link in appMenuConsultConst"
         :key="JSON.stringify(link)"
         :title="link.name"
         :to="link.url"

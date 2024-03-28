@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import AppDarkModeBtn from '~/components/AppDarkModeBtn.vue'
-  import AppNavigationDrawer from '~/components/AppNavigationDrawer.vue'
+  import AppNavigationDrawerConsult from '~/components/AppNavigationDrawerConsult.vue'
+  import AppNavigationDrawerPlanif from '~/components/AppNavigationDrawerPlanif.vue'
 
   const darkMode = ref<'light' | 'dark'>('dark')
   const {mobile} = useDisplay()
@@ -17,7 +18,8 @@
 <template>
   <VApp :theme="darkMode">
     <VLayout class="rounded rounded-md">
-      <AppNavigationDrawer v-model="drawer" />
+<!--      TODO: A switcher entre AppNavigationDrawerConsult ou AppNavigationDrawerPlanif pour visuel -->
+      <AppNavigationDrawerConsult v-model="drawer" />
       <VAppBar title="Application bar">
         <template
           #prepend

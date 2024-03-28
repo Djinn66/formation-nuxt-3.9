@@ -1,4 +1,4 @@
-export const appMenuConst = [
+export const appMenuConsultConst = [
   {
     name: 'Tankers',
     url: '/tankers',
@@ -18,5 +18,18 @@ export const appMenuConst = [
     name: 'Users',
     url: '/users',
     icon: 'mdi-account-multiple',
+  },
+]
+
+export const appMenuPlanifConst = [
+  {
+    name: 'Start Planning',
+    url: '/planning',
+    icon: 'mdi-table-clock',
+  },
+  {
+    name: 'Results',
+    url: '/results',
+    icon: 'mdi-chart-timeline',
   },
 ]
